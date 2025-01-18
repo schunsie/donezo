@@ -1,3 +1,5 @@
+import './style.css';
+
 class Task {
     constructor(title, desc, dueDate, priority) {
         this.title = title;

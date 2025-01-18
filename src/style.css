@@ -24,4 +24,45 @@ body {
 
 input, button, textarea, select {
     font: inherit;
-  }
+}
+
+
+/* Header */
+header {
+    background-color: var(--coral);
+    color: var(--baby-powder);
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 25px;
+
+    h1 {
+        position: relative;
+        display: inline-block;
+    }
+    
+    h1::after {
+        content: url('./media/icons/check.svg');
+        position: absolute;
+        left: 1.6rem;
+        transform: scale(1.7);
+        top: -0.25rem;
+    }
+}
+
+body {
+    color: var(--raisin-black);
+}
+
+.project {
+    width: 85vw;
+    margin: 0 auto;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(52, 46, 55, 0.3);
+    border-radius: 1px;
+
+    padding: 0 8px;
+}
