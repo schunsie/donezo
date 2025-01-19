@@ -16,28 +16,24 @@ function touchStartHandler(event) {
 function touchMoveHandler(event) {
     const touchInfo = event.touches[0];
     const currentY = touchInfo.clientY;
-    const deltaY = startY - currentY;
+    const deltaY = currentY - startY;
 
     if (deltaY > 0) {
-        return;
+        content.style.transform = `translateY(${deltaY}px)`;
     } 
-
-    console.log(`deltaY: ${deltaY}, currentY: ${currentY}, startY ${startY}, deltaY + currentY: ${deltaY + currentY}`);
-
-    content.style.bottom = deltaY + 'px';
+    
 }
 
 function touchEndHandler(event) {
-    const displacement = content.style.bottom;
-    const regex = /^-?([0-9]+)/gm;
-    const displacementValue = displacement.match(regex);
-
-    if (displacementValue < -250) {
-        content.style.bottom = '100%';
+    const transform = content.style.transform;
+    const regex = /([0-9]+)/gm;
+    const displacementValue = transform.match(regex);
+    
+    if (displacementValue > 250) {
         content.classList.add('menu-mode')
+        content.style.transform = 'translateY(calc(100% - 100px))';
     } 
     else {
-        content.style.bottom = 0;
     }
 }
 
