@@ -32,7 +32,7 @@ input, button, textarea, select {
 
 .behind {
     background-color: var(--coral);
-    height: 100vh;
+    height: 100dvh;
     color: var(--baby-powder);
 }
 
@@ -106,7 +106,7 @@ body {
     bottom: 0;
     background-color: var(--baby-powder);
     width: 100%;
-    height: calc(100vh - 6rem);
+    height: calc(100dvh - 6rem);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     transition: transform 0.3s ease-out;
