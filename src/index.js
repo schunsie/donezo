@@ -1,4 +1,5 @@
 import './style.css';
+import { touchStartHandler, touchMoveHandler } from './ui';
 
 class Task {
     constructor(title, desc, dueDate, priority) {

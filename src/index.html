@@ -6,16 +6,38 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>Donezo</h1>
-    </header>
+    <div class="behind">
+        <header>
+            <h1>Donezo</h1>
+        </header>
+        <nav>
+            <button>All tasks</button>
+            <button>Today</button>
+            <button>Week</button>
+            
+            <h3 class="project-header">Projects</h3>
+            <button>Web App</button>
+        </nav>
+    </div>
 
     <div class="content">
+        <div class="instruction">
+            <img src="media/icons/arrowDown.svg">
+            <p>Drag the page down to open the menu</p>
+        </div>
         <div class="project">
             <div class="project-header">
-                <h3>My project</h3>
-                <img src="media/icons/openMenu.svg">
+                <h2>All tasks (2)</h2>
             </div>
+
+            <ul class="task-list">
+                <li class="task soon">
+                    <h3>Walk the dog</h3>
+                </li>
+                <li class="task chill">
+                    <h3>Mow the lawn</h3>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
