@@ -166,5 +166,35 @@ body {
 }
 
 @media only screen and (min-width: 992px) {
+    body {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 100vh;
+    }
 
+    .instruction {
+        display: none;
+    }
+
+    .content {
+        animation: none;
+        position: static;
+        z-index: 0;
+        padding: 50px;
+        border-radius: 0;
+        height: 100%;
+    }
+
+    nav {
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: flex-end;
+        opacity: 1;
+        animation: none;
+    }
+
+    .project {
+        width: 100%;
+    }
 } 
