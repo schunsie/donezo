@@ -34,7 +34,8 @@ function touchEndHandler(event) {
         content.style.transform = 'translateY(calc(100% - 100px))';
     } 
     else {
+        content.style.transform = 'translateY(0)';
     }
 }
 
-export { touchStartHandler, touchMoveHandler }
+export { touchStartHandler, touchMoveHandler, touchEndHandler }
