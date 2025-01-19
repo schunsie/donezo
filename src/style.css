@@ -125,6 +125,28 @@ body {
         opacity: 0.6;
         font-size: 0.9rem;
     }
+
+    #dragInstr {
+        display: block;
+    }
+
+    #clickInstr {
+        display: none;
+    }
+}
+
+.menu-mode .instruction {
+    img {
+        transform: rotate(180deg);
+    }
+
+    #dragInstr {
+        display: none;
+    }
+
+    #clickInstr {
+        display: block;
+    }
 }
 
 .project {
