@@ -28,9 +28,9 @@ input, button, textarea, select {
 }
 
 
-/* Behind */
+/* navigation bar */
 
-.behind {
+.navigation {
     background-color: var(--coral);
     height: 100dvh;
     color: var(--baby-powder);
@@ -164,3 +164,7 @@ body {
         transform: translateY(0);
     }
 }
+
+@media only screen and (min-width: 992px) {
+
+} 
