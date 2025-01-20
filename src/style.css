@@ -165,6 +165,11 @@ body {
     border-left-width: 4px;
     border-left-style: solid;
 
+    display: grid;
+    grid-template-columns: 1fr 6rem;
+    grid-template-rows: 2rem auto;
+    gap: 5px;
+
     &.urgent {
         border-left-color: var(--coral);
     }
@@ -178,6 +183,19 @@ body {
     }
 }
 
+.task h3 {
+    align-self: flex-end;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task .info-date {
+    grid-area: 1 / 2 / 3 / 3;
+    align-self: center;
+    opacity: 0.6;
+}
+
 @keyframes slideUp {
     0% {
         transform: translateY(100%);
@@ -187,6 +205,8 @@ body {
     }
 }
 
+
+/* Responsive design larger displays */
 @media only screen and (min-width: 992px) {
     body {
         display: grid;
@@ -207,6 +227,24 @@ body {
         height: 100%;
     }
 
+    .task {
+        grid-template-columns: clamp(100px, 100%, 300px) auto 6rem;
+        grid-template-rows: 50px;
+        align-items: center;
+        justify-content: space-between; 
+
+        h3 {align-self: center;}
+    }
+
+    .task .info-project {
+        grid-area: 1 / 2 / 2 / 3;
+        opacity: 0.6;
+    }
+
+    .task .info-date {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+
     nav {
         width: 100px;
         margin-left: auto;
@@ -214,6 +252,10 @@ body {
         align-items: flex-end;
         opacity: 1;
         animation: none;
+    }
+
+    button:hover {
+        transform: scale(1.1);
     }
 
     .project {
