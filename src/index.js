@@ -30,13 +30,22 @@ function removeTaskFromProject(task, project=defaultList) {
     project.tasks = project.tasks.filter((projectTask) => projectTask !== task);
 };
 
-
+function createNewProject(name) {
+    projects.push(new Project(name));
+}
 
 
 
 // Testing
-const test = new Task('Buy milk', 'Buy 2 liters of milk', '20-01-2025', 8);
-console.log(test);
+const defaultList = new Project('Home');
+const projects = [defaultList]
 
-test.toggleCompleted()
-console.log(test);
+addTaskToProject(new Task('Walk the dog', 'lorem ipsem', '20-02-2025', 2));
+addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 2));
+
+console.log(defaultList);
+console.log(projects);
+
+createNewProject('Web App');
+addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 2), projects[1]);
+console.log(projects);

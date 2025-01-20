@@ -135,6 +135,33 @@ body {
     }
 }
 
+.new-task {
+    background: none;
+    border: none;
+    opacity: 0.6;
+}
+
+.task-form {
+    color: var(--raisin-black);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+
+    p {
+        opacity: 0.6;
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        resize: none;
+        height: 9rem;
+    }
+
+    label {
+        margin-top: min(3%, 20px);
+    }
+}
+
 .menu-mode .instruction {
     img {
         transform: rotate(180deg);
