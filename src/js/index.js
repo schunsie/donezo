@@ -58,9 +58,9 @@ addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 0));
 
 createNewProject('Web App');
 addTaskToProject(new Task('Learn responsive design', 'lorem ipsem', '25-02-2025', 2), projects[1]);
-// addTaskToProject(new Task('Learn JS', 'lorem ipsem', '25-02-2025', 2), projects[1]);
-// addTaskToProject(new Task('Learn CSS', 'lorem ipsem', '25-02-2025', 2), projects[1]);
-// addTaskToProject(new Task('Learn HTML', 'lorem ipsem', '25-02-2025', 2), projects[1]);
+addTaskToProject(new Task('Learn JS', 'lorem ipsem', '25-02-2025', 2), projects[1]);
+addTaskToProject(new Task('Learn CSS', 'lorem ipsem', '25-02-2025', 2), projects[1]);
+addTaskToProject(new Task('Learn HTML', 'lorem ipsem', '25-02-2025', 2), projects[1]);
 
 
 // Initial render
