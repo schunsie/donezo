@@ -1,4 +1,6 @@
 import { addTaskToProject, Task } from ".";
+import { renderAllTasksPage } from "./ui";
+import dragIcon from '../media/icons/arrowDown.svg';
 
 function createTaskForm() {
     const form = document.createElement('form');
@@ -67,9 +69,26 @@ function createTaskForm() {
         const dueDate = dateInputField.value;
         const desc = descInputField.value;
         const priority = priorInput.value;
-        addTaskToProject(new Task(title, desc, dueDate, priority))
+        addTaskToProject(new Task(title, desc, dueDate, priority));
+        form.reset();
+        renderAllTasksPage();
+
     }
 }
 
+function createInformationBar() {
+    const instructions = document.createElement('div');
+    instructions.classList.add('instruction');
 
-export { createTaskForm }
+    const icon = document.createElement('img');
+    icon.src = dragIcon;
+    instructions.appendChild(icon);
+
+    instructions.innerHTML += `
+        <p id="dragInstr">Drag the page down to open the menu</p>
+        <p id="clickInstr">Click to open</p>
+    `;
+    
+    return instructions; 
+}
+export { createTaskForm, createInformationBar }

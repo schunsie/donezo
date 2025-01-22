@@ -1,24 +1,31 @@
-import { createTaskForm } from "./createElements";
+import { createTaskForm, createInformationBar } from "./createElements";
 import {touchStartHandler, touchEndHandler, touchMoveHandler} from "./touchControls";
+import { createAllTaskPage } from "./pages/allTasks";
 
 const content = document.querySelector('.content');
-const slider = document.querySelector('.instruction');
-slider.addEventListener('touchstart', touchStartHandler);
-slider.addEventListener('touchmove', touchMoveHandler);
-slider.addEventListener('touchend', touchEndHandler);
-
-const newBtn = document.querySelector('.new-task');
-newBtn.addEventListener('click', openTaskForm);
 
 function openTaskForm() {
     content.innerHTML = '';
 
     const form = createTaskForm();
-
     content.appendChild(form);
 }
 
+function renderInformationBar() {
+    const instructions = createInformationBar();
+    content.appendChild(instructions);
+
+    instructions.addEventListener('touchstart', touchStartHandler);
+    instructions.addEventListener('touchmove', touchMoveHandler);
+    instructions.addEventListener('touchend', touchEndHandler);
+}
+
+function renderAllTasksPage() {
+    content.innerHTML = '';
+    renderInformationBar();
+    content.appendChild(createAllTaskPage());
+}
 // dev
 // openTaskForm()
 
-export { touchStartHandler, touchMoveHandler, touchEndHandler }
+export { renderAllTasksPage, openTaskForm }

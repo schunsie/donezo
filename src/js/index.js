@@ -1,5 +1,6 @@
 import '../style.css';
-import { touchStartHandler, touchMoveHandler } from './ui';
+import './ui.js';
+import { renderAllTasksPage } from './ui.js';
 
 class Task {
     constructor(title, desc, dueDate, priority) {
@@ -22,12 +23,12 @@ class Project {
     };
 };
 
-function addTaskToProject(task, project=defaultList) {
+function addTaskToProject(task, project=defaultProject) {
     project.tasks.push(task);
     console.log(projects);
 }
 
-function removeTaskFromProject(task, project=defaultList) {
+function removeTaskFromProject(task, project) {
     project.tasks = project.tasks.filter((projectTask) => projectTask !== task);
 };
 
@@ -35,20 +36,32 @@ function createNewProject(name) {
     projects.push(new Project(name));
 }
 
+const getProjects = () => {return [...projects]};
+
+function getTasks() {
+    const projectArray = getProjects();
+
+    const tasks = projectArray.flatMap(project => {
+        return project.tasks;
+    });
+
+    return tasks;
+}
+
+const defaultProject = new Project('Home');
+const projects = [defaultProject]
 
 
 // Testing
-const defaultList = new Project('Home');
-const projects = [defaultList]
-
-addTaskToProject(new Task('Walk the dog', 'lorem ipsem', '20-02-2025', 2));
-addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 2));
-
-console.log(defaultList);
-console.log(projects);
+addTaskToProject(new Task('Walk the dog', 'lorem ipsem', '20-02-2025', 1));
+addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 0));
 
 createNewProject('Web App');
-addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 2), projects[1]);
-console.log(projects);
+addTaskToProject(new Task('Learn responsive design', 'lorem ipsem', '25-02-2025', 2), projects[1]);
 
-export {addTaskToProject, Task}
+
+// Initial render
+renderAllTasksPage();
+
+
+export {addTaskToProject, Task, getProjects, getTasks}

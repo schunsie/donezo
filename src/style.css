@@ -145,7 +145,7 @@ body {
     color: var(--raisin-black);
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding-top: 25px;
 
     p {
         opacity: 0.6;
@@ -176,7 +176,8 @@ body {
     }
 }
 
-.project {
+.project,
+.task-form {
     width: 85vw;
     margin: 0 auto;
 }
