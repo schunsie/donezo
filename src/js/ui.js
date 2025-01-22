@@ -7,7 +7,6 @@ slider.addEventListener('touchstart', touchStartHandler);
 slider.addEventListener('touchmove', touchMoveHandler);
 slider.addEventListener('touchend', touchEndHandler);
 
-
 const newBtn = document.querySelector('.new-task');
 newBtn.addEventListener('click', openTaskForm);
 

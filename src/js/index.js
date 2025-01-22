@@ -1,4 +1,4 @@
-import './style.css';
+import '../style.css';
 import { touchStartHandler, touchMoveHandler } from './ui';
 
 class Task {
@@ -24,6 +24,7 @@ class Project {
 
 function addTaskToProject(task, project=defaultList) {
     project.tasks.push(task);
+    console.log(projects);
 }
 
 function removeTaskFromProject(task, project=defaultList) {
@@ -49,3 +50,5 @@ console.log(projects);
 createNewProject('Web App');
 addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 2), projects[1]);
 console.log(projects);
+
+export {addTaskToProject, Task}

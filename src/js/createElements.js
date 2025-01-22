@@ -1,3 +1,5 @@
+import { addTaskToProject, Task } from ".";
+
 function createTaskForm() {
     const form = document.createElement('form');
     form.classList.add('task-form');
@@ -51,7 +53,22 @@ function createTaskForm() {
     form.appendChild(priorInputLabel);
     form.appendChild(priorInput);
 
+    const submitBtn = document.createElement('button');
+    submitBtn.type = 'submit';
+    submitBtn.innerText ='Add';
+    form.appendChild(submitBtn);
+    submitBtn.addEventListener('click', getInputFromForm);
+
     return form;
+    
+    function getInputFromForm(event) {
+        event.preventDefault();
+        const title = nameInputField.value;
+        const dueDate = dateInputField.value;
+        const desc = descInputField.value;
+        const priority = priorInput.value;
+        addTaskToProject(new Task(title, desc, dueDate, priority))
+    }
 }
 
 
