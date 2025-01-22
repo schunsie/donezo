@@ -71,8 +71,7 @@ function createTaskItem(task) {
         <div class="info-project">WORK IN PROGRESS</div>
         <div class="info-date">${task.dueDate}</div>
     `
-    console.log(`${task.title} ${task.priority}`);
-    
+      
     switch (parseInt(task.priority)) {
         case 0:
             li.classList.add('chill');

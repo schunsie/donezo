@@ -25,7 +25,5 @@ function renderAllTasksPage() {
     renderInformationBar();
     content.appendChild(createAllTaskPage());
 }
-// dev
-// openTaskForm()
 
 export { renderAllTasksPage, openTaskForm }

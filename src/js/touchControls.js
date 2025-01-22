@@ -6,7 +6,6 @@ let startY;
 function touchStartHandler(event) {
     const touchInfo = event.touches[0];
     startY = touchInfo.clientY;
-    console.log(startY);
 }
 
 function touchMoveHandler(event) {

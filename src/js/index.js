@@ -25,7 +25,6 @@ class Project {
 
 function addTaskToProject(task, project=defaultProject) {
     project.tasks.push(task);
-    console.log(projects);
 }
 
 function removeTaskFromProject(task, project) {

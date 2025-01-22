@@ -71,7 +71,6 @@ function createTaskForm() {
         const priority = priorInput.value;
         addTaskToProject(new Task(title, desc, dueDate, priority));
         form.reset();
-        console.log(priority);
         renderAllTasksPage();
 
     }
