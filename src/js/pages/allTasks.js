@@ -1,5 +1,5 @@
 import addIcon from '../../media/icons/addBox.svg';
-import { getTasks } from '..';
+import { getProjects, getTasks } from '..';
 import { openTaskForm } from '../ui';
 {/* 
 <div class="project">
@@ -51,24 +51,25 @@ export function createAllTaskPage() {
     const taskList = document.createElement('ul');
     taskList.classList.add('task-list');
 
-    const tasks = getTasks();
-    tasks.forEach(task => {
-        taskList.appendChild(createTaskItem(task));
-    })
-    
-    
+    const projects = getProjects();
+    projects.forEach(project => {
+        project.tasks.forEach(task => {
+            taskList.appendChild(createTaskItem(task, project.name));
+        });
+    });
+        
     page.appendChild(taskList);
     return page;
 }
 
-function createTaskItem(task) {
+function createTaskItem(task, projectName) {
     const li = document.createElement('li');
     li.classList.add('task')
 
     // TODO: find a way to get project name of tasks
     li.innerHTML = `
         <h3>${task.title}</h3>
-        <div class="info-project">WORK IN PROGRESS</div>
+        <div class="info-project">${projectName}</div>
         <div class="info-date">${task.dueDate}</div>
     `
       
