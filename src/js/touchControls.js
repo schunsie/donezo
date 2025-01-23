@@ -38,8 +38,10 @@ function touchEndHandler(event) {
 }
 
 function closeNavMenu() {
-    content.style.transform = 'translateY(0)';
-    content.classList.remove('menu-mode');
+    if (window.innerWidth < 992) {
+        content.style.transform = 'translateY(0)';
+        content.classList.remove('menu-mode');
+    }
 }
 
 export {touchEndHandler, touchMoveHandler, touchStartHandler, closeNavMenu}

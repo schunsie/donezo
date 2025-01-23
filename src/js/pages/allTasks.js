@@ -1,6 +1,7 @@
 import addIcon from '../../media/icons/addBox.svg';
 import { getProjects, getTasks } from '..';
 import { openTaskForm } from '../ui';
+import { createTaskItem } from '../createElements';
 {/* 
 <div class="project">
 <div class="project-header">
@@ -60,30 +61,4 @@ export function createAllTaskPage() {
         
     page.appendChild(taskList);
     return page;
-}
-
-function createTaskItem(task, projectName) {
-    const li = document.createElement('li');
-    li.classList.add('task')
-
-    // TODO: find a way to get project name of tasks
-    li.innerHTML = `
-        <h3>${task.title}</h3>
-        <div class="info-project">${projectName}</div>
-        <div class="info-date">${task.dueDate}</div>
-    `
-      
-    switch (parseInt(task.priority)) {
-        case 0:
-            li.classList.add('chill');
-            break;
-        case 1:
-            li.classList.add('soon');
-            break;
-        case 2:
-            li.classList.add('urgent');
-            break;
-    }
-
-    return li;
 }

@@ -98,4 +98,30 @@ function createInformationBar() {
 
     return instructions; 
 }
-export { createTaskForm, createInformationBar }
+
+function createTaskItem(task, projectName) {
+    const li = document.createElement('li');
+    li.classList.add('task')
+
+    li.innerHTML = `
+        <h3>${task.title}</h3>
+        <div class="info-project">${projectName}</div>
+        <div class="info-date">${task.dueDate}</div>
+    `
+      
+    switch (parseInt(task.priority)) {
+        case 0:
+            li.classList.add('chill');
+            break;
+        case 1:
+            li.classList.add('soon');
+            break;
+        case 2:
+            li.classList.add('urgent');
+            break;
+    }
+
+    return li;
+}
+
+export { createTaskForm, createInformationBar, createTaskItem }
