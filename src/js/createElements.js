@@ -66,9 +66,11 @@ function createTaskForm() {
     function getInputFromForm(event) {
         event.preventDefault();
         const title = nameInputField.value;
-        const dueDate = dateInputField.value;
+        const dueDate = new Date(dateInputField.value).
+            toLocaleDateString(undefined, {month: '2-digit', day: '2-digit', year: 'numeric'});
         const desc = descInputField.value;
         const priority = priorInput.value;
+        console.log(dueDate);
         addTaskToProject(new Task(title, desc, dueDate, priority));
         form.reset();
         renderAllTasksPage();
