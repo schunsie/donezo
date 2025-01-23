@@ -1,5 +1,4 @@
 import { createTaskForm, createInformationBar } from "./createElements";
-import {touchStartHandler, touchEndHandler, touchMoveHandler} from "./touchControls";
 import { createAllTaskPage } from "./pages/allTasks";
 
 const content = document.querySelector('.content');
@@ -14,10 +13,6 @@ function openTaskForm() {
 function renderInformationBar() {
     const instructions = createInformationBar();
     content.appendChild(instructions);
-
-    instructions.addEventListener('touchstart', touchStartHandler);
-    instructions.addEventListener('touchmove', touchMoveHandler);
-    instructions.addEventListener('touchend', touchEndHandler);
 }
 
 function renderAllTasksPage() {

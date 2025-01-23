@@ -1,6 +1,7 @@
 import { addTaskToProject, Task } from ".";
 import { renderAllTasksPage } from "./ui";
 import dragIcon from '../media/icons/arrowDown.svg';
+import {touchStartHandler, touchEndHandler, touchMoveHandler} from "./touchControls";
 
 function createTaskForm() {
     const form = document.createElement('form');
@@ -74,7 +75,6 @@ function createTaskForm() {
         addTaskToProject(new Task(title, desc, dueDate, priority));
         form.reset();
         renderAllTasksPage();
-
     }
 }
 
@@ -90,7 +90,12 @@ function createInformationBar() {
         <p id="dragInstr">Drag the page down to open the menu</p>
         <p id="clickInstr">Click to open</p>
     `;
-    
+        
+    // Add touch control event listeners
+    instructions.addEventListener('touchstart', touchStartHandler);
+    instructions.addEventListener('touchmove', touchMoveHandler);
+    instructions.addEventListener('touchend', touchEndHandler);
+
     return instructions; 
 }
 export { createTaskForm, createInformationBar }
