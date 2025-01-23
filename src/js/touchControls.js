@@ -28,7 +28,7 @@ function touchEndHandler(event) {
     // If displacement is larger than cut off (250 px here)
     if (displacementValue > 250) {
         // Snap content window downwards
-        content.classList.toggle('menu-mode')
+        content.classList.add('menu-mode')
         content.style.transform = 'translateY(calc(100% - 100px))';
     } 
     else {
@@ -37,4 +37,9 @@ function touchEndHandler(event) {
     }
 }
 
-export {touchEndHandler, touchMoveHandler, touchStartHandler}
+function closeNavMenu() {
+    content.style.transform = 'translateY(0)';
+    content.classList.remove('menu-mode');
+}
+
+export {touchEndHandler, touchMoveHandler, touchStartHandler, closeNavMenu}

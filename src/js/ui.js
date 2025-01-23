@@ -1,5 +1,6 @@
 import { createTaskForm, createInformationBar } from "./createElements";
 import { createAllTaskPage } from "./pages/allTasks";
+import { closeNavMenu } from "./touchControls";
 
 const content = document.querySelector('.content');
 
@@ -20,5 +21,12 @@ function renderAllTasksPage() {
     renderInformationBar();
     content.appendChild(createAllTaskPage());
 }
+
+// Navigation
+const allTaskFilter = document.querySelector('#all-tasks');
+allTaskFilter.addEventListener('click', () => {
+    renderAllTasksPage()
+    closeNavMenu();
+});
 
 export { renderAllTasksPage, openTaskForm }
