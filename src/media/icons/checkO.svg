@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg width="960" height="960" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_4">
+   <text fill="#FAFFFD" font-family="Segoe UI, sans-serif" font-size="140" font-weight="bold" id="svg_1" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0) matrix(8.78096, 0, 0, 7.47973, -3301.48, -2100.31)" x="431.28" y="397.38">O</text>
+   <path d="m327.45,367.45l153.08,203.52c127.15,-168.18 253.32,-317.37 379.26,-486.57" fill="none" id="svg_2" stroke="#A2D729" stroke-linecap="round" stroke-width="150"/>
+  </g>
+ </g>
+
+</svg>

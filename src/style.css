@@ -45,12 +45,9 @@ header {
         display: inline-block;
     }
     
-    h1::after {
-        content: url('./media/icons/check.svg');
-        position: absolute;
-        left: 1.6rem;
-        transform: scale(1.7);
-        top: -0.25rem;
+    h1 > img {
+        width: 1.3rem;
+        transform: translateY(2px)
     }
 }
 
