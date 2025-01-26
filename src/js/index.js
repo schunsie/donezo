@@ -52,14 +52,14 @@ const projects = [defaultProject]
 
 
 // Testing
-addTaskToProject(new Task('Walk the dog', 'lorem ipsem', '23-01-2025', 1));
-addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', '25-02-2025', 0));
+addTaskToProject(new Task('Walk the dog', 'lorem ipsem', new Date(2025, 0, 26), 1));
+addTaskToProject(new Task('Mow the lawn', 'lorem ipsem', new Date(2025, 0, 30), 0));
 
 createNewProject('Web App');
-addTaskToProject(new Task('Learn responsive design', 'lorem ipsem', '31-02-2025', 0), projects[1]);
-addTaskToProject(new Task('Learn JS', 'lorem ipsem', '31-01-2025', 1), projects[1]);
-addTaskToProject(new Task('Learn CSS', 'lorem ipsem', '25-01-2025', 2), projects[1]);
-addTaskToProject(new Task('Learn HTML', 'lorem ipsem', '25-01-2025', 2), projects[1]);
+addTaskToProject(new Task('Learn responsive design', 'lorem ipsem', new Date(2025, 1, 28), 0), projects[1]);
+addTaskToProject(new Task('Learn JS', 'lorem ipsem', new Date(2025, 1, 20), 1), projects[1]);
+addTaskToProject(new Task('Learn CSS', 'lorem ipsem', new Date(2025, 1, 18), 2), projects[1]);
+addTaskToProject(new Task('Learn HTML', 'lorem ipsem', new Date(2025, 1, 10), 2), projects[1]);
 
 
 // Initial render

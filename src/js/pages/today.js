@@ -19,14 +19,14 @@ export function createTodayPage() {
 
 function getTasksDueToday(projects) {
     const tasks = [];
-    const today = new Date(Date.now())
-    const todayFormatted = today.toLocaleString(undefined, {month: '2-digit', day: '2-digit', year: 'numeric'});
-    const todayIsolated = todayFormatted.split(',')[0];
+    const today = new Date()
+    const todayFormatted = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    console.log(todayFormatted);
 
     for (const project of projects) {
         project.tasks.forEach(task => {
             console.log(task.dueDate);
-            if (task.dueDate == todayIsolated) {
+            if (todayFormatted.getTime() === task.dueDate.getTime()) {
                 tasks.push({
                     task: task,
                     projectName: project.name

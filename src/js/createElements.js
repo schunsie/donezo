@@ -67,14 +67,19 @@ function createTaskForm() {
     function getInputFromForm(event) {
         event.preventDefault();
         const title = nameInputField.value;
-        const dueDate = new Date(dateInputField.value).
-            toLocaleDateString(undefined, {month: '2-digit', day: '2-digit', year: 'numeric'});
+        const dueDate = normalizeDate(dateInputField.value);
         const desc = descInputField.value;
         const priority = priorInput.value;
         console.log(dueDate);
         addTaskToProject(new Task(title, desc, dueDate, priority));
         form.reset();
         renderAllTasksPage();
+
+
+        function normalizeDate(dateString) {
+            const [year, month, day] = dateString.split('-');
+            return new Date(year, month - 1, day);
+        }
     }
 }
 
@@ -103,10 +108,18 @@ function createTaskItem(task, projectName) {
     const li = document.createElement('li');
     li.classList.add('task')
 
+    const dueDateFormatted = task.dueDate.toLocaleDateString(
+        undefined, 
+        {
+            day:'2-digit', 
+            month:'2-digit', 
+            year:'numeric'
+        });
+
     li.innerHTML = `
         <h3>${task.title}</h3>
         <div class="info-project">${projectName}</div>
-        <div class="info-date">${task.dueDate}</div>
+        <div class="info-date">${dueDateFormatted}</div>
     `
       
     switch (parseInt(task.priority)) {
