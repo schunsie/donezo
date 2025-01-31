@@ -1,5 +1,7 @@
+import { getProjects } from ".";
 import { createTaskForm, createInformationBar } from "./createElements";
 import { createAllTaskPage } from "./pages/allTasks";
+import { createProjectPage } from "./pages/project";
 import { createTodayPage } from "./pages/today";
 import { closeNavMenu } from "./touchControls";
 
@@ -42,4 +44,29 @@ todayTaskFilter.addEventListener('click', () => {
     closeNavMenu();
 })
 
-export { renderAllTasksPage, openTaskForm }
+function renderProjectsInNav() {
+    const projectNav = document.querySelector('.nav-projects');
+    const projects = getProjects();
+
+    projects.forEach((project, index) => {
+        projectNav.appendChild(createNavItem(project, index));
+    });
+
+    function createNavItem(project, index) {
+        const btn = document.createElement('button');
+        btn.textContent = project.name;
+        btn.dataset.index = index;
+        btn.addEventListener('click', navigateToProject);
+        return btn;
+    }
+}
+
+function navigateToProject(event) {
+    const index = event.target.dataset.index;
+    content.innerHTML = '';
+    renderInformationBar();
+    content.appendChild(createProjectPage(index));
+    closeNavMenu();
+}
+
+export { renderAllTasksPage, openTaskForm, renderProjectsInNav }

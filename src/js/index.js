@@ -1,6 +1,6 @@
 import '../style.css';
 import './ui.js';
-import { renderAllTasksPage } from './ui.js';
+import { renderAllTasksPage, renderProjectsInNav } from './ui.js';
 
 class Task {
     constructor(title, desc, dueDate, priority) {
@@ -63,6 +63,7 @@ addTaskToProject(new Task('Learn HTML', 'lorem ipsem', new Date(2025, 1, 10), 2)
 
 
 // Initial render
+renderProjectsInNav();
 renderAllTasksPage();
 
 
